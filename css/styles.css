@@ -1,0 +1,215 @@
+html {
+  font-family: Arial, sans-serif;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/*header*/
+header {
+  background-color: #0046be;
+}
+
+header>ul {
+  justify-content: flex-end;
+  height: 48px;
+  align-items: center;
+}
+header>ul li {
+  padding-left: 16px;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+header>div:not(.dk-blue){
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  align-items: center;
+}
+.dk-blue {
+  background-color: #003DA6;
+  height: 48px;
+}
+nav ul {
+  height: 48px;
+  align-items: center;
+}
+header>div ul:not(.dk-blue):last-child {
+  max-width: 240px;
+  flex-basis: 240px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*main*/
+main {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main>section {
+  display: flex;
+  flex-wrap: wrap;
+}
+h3 {
+  flex-basis: 100%;
+}
+
+@media(min-width: 768px){
+  main>section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  h3 {
+    text-align: center;
+    flex-basis: 100%;
+  }
+  /*gutter spacing is 2.5%
+  for defaults which will be 2 across one (100%-2.5%)/2*/
+  section>section {
+    flex-basis: calc((100%-2.5%)/2);
+  }
+  section>section:nth-of-type(1),
+  section>section:nth-of-type(2),
+  section>section:nth-of-type(3) {
+    flex-basis: calc((100%-2.5%*2)/3);
+  }
+}
+
+main > section:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main > section:first-child section {
+  flex-basis: calc((100% - 16px)/2);
+}
+
+main > section:nth-child(2) h3 {
+  text-align: left;
+}
+main > section:nth-child(3) {
+  flex-basis: 100%;
+}
+.get-help {
+  background-image: url(../img/search.webp);
+  background-size: auto 176px;
+  padding-top: 176px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+main > section:nth-of-type(3) {
+  order: -1;
+}
+/*main > section:nth-of-type(2) {
+  order: 2;
+}
+main > section:nth-of-type(1) {
+  order: 3;
+}*/
+
+@media(min-width: 768px){
+  main > section:first-child section {
+    flex-basis: calc((100% - 16px*3)/4);
+  }
+  main > section:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+  main > section:nth-child(3) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  /*main > section:nth-child(3) section {
+    flex-basis: calc((100%-2.5%)/2);
+  }*/
+  main > section:nth-child(3) section:nth-of-type(1),
+  main > section:nth-child(3) section:nth-of-type(2),
+  main > section:nth-child(3) section:nth-of-type(3) {
+    flex-basis: calc((100% - 32px)/3);
+  }
+  main>section:nth-child(3)>section:nth-of-type(4),
+  main>section:nth-child(3)>section:nth-of-type(5) {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+/*div {
+  display: flex;
+  flex-direction: column;
+  order: 4;
+}*/
+
+/*start with https*/
+a[href^="https"]{border: 2px dotted purple; padding: 5px;}
+
+/*end with docx*/
+a[href$=".docx"]{background-color: magenta;}
+
+[title]{font-size: 2rem;}
+
+[class*="red"] {background-color: red; margin: 3rem;}
+[class="red"] {color:yellow;}
+
+/*p::first-letter {font-size: 4rem; color: navy;}
+p::first-line {text-decoration: overline; color: pink;}*/
+
+
+
+/*footer*/
+footer ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+footer>ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer>ul>li {
+  flex-basis: 100%;
+}
+footer>ul>li:first-child {
+  flex-basis: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer>ul>li:first-child ul {
+  flex-basis: 33.3%;
+}
+footer>ul>li:first-child ul li:first-child a {
+  font-weight: bold;
+  cursor: pointer;
+}
+footer>ul>li:nth-child(2){
+  flex-basis: 30%;
+}
+footer>ul>li:nth-child(2) ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer>ul>li:last-child ul {
+  display: flex;
+}
+footer>ul>li:last-child ul li:after {
+  content: '|';
+  color: red;
+  padding: 0 5px;
+}
+footer>ul>li:last-child ul li:last-child:after {
+  content: "";
+}
