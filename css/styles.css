@@ -35,17 +35,20 @@ header>div:not(.dk-blue){
   height: 48px;
   align-items: center;
 }
+header>div:not(.dk-blue) ul:last-child {
+  max-width: 240px;
+  flex-basis: 240px;
+  display: flex;
+  justify-content: space-between;
+}
 .dk-blue {
   background-color: #003DA6;
   height: 48px;
 }
 nav ul {
+  max-width: 480px;
   height: 48px;
   align-items: center;
-}
-header>div:not(.dk-blue) ul:last-child {
-  max-width: 240px;
-  flex-basis: 240px;
   display: flex;
   justify-content: space-between;
 }
